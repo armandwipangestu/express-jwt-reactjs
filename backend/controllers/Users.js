@@ -58,6 +58,7 @@ export const Login = async (req, res) => {
         const userId = user[0].id;
         const name = user[0].name;
         const email = user[0].email;
+
         const accessToken = jwt.sign(
             {
                 userId,
@@ -69,6 +70,7 @@ export const Login = async (req, res) => {
                 expiresIn: "20s",
             }
         );
+
         const refreshToken = jwt.sign(
             {
                 userId,
@@ -80,6 +82,7 @@ export const Login = async (req, res) => {
                 expiresIn: "1d",
             }
         );
+
         await Users.update(
             {
                 refresh_token: refreshToken,
