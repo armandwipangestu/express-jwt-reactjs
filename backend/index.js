@@ -4,9 +4,9 @@ import DB from "./config/DB.js";
 // import Users from "./models/UserModel.js";
 import router from "./routes/index.js";
 
+dotenv.config();
 const app = express();
 const PORT = 5000;
-dotenv.config();
 
 try {
     await DB.authenticate();
