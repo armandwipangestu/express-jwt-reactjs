@@ -7,6 +7,8 @@
 
 -   [Running on Localhost](#running-on-localhost)
     -   [Backend](#backend)
+    -   [Frontend](#frontend)
+-   [API Information](#api-information)
 -   [JWT Flow](#jwt-flow)
     -   [JWT on Login (Authentication)](#jwt-on-login-authentication)
     -   [JWT on Middleware (Authorization)](#jwt-on-middleware-authorization)
@@ -84,6 +86,54 @@ cp .env.example .env
 ```bash
 nodemon index
 ```
+
+## Frontend
+
+-   Change current directory to backend
+
+```bash
+cd express-jwt-reactjs/frontend
+```
+
+-   Install depedency library
+
+```bash
+yarn install
+```
+
+-   Copy `.env.example` to `.env`
+
+> **NOTE**:
+>
+> Please edit this variable with your own configuration
+>
+> ```bash
+> VITE_API_URL="http://localhost:5000"
+> ```
+
+```bash
+cp .env.example .env
+```
+
+-   Running the Frontend Server
+
+> **NOTE**:
+>
+> Frontend server will run on `localhost:3000`
+
+```bash
+yarn run dev
+```
+
+# API Information
+
+| Endpoint  | Middleware    | Method | Description                                                      |
+| --------- | ------------- | ------ | ---------------------------------------------------------------- |
+| `/users`  | `verifyToken` | GET    | Get `users` data with Authorization by `accessToken`             |
+| `/users`  | -             | POST   | Register `users`                                                 |
+| `/login`  | -             | POST   | Authentication with generate `refreshToken` & `accessToken` sign |
+| `/token`  | -             | GET    | Regenerate `accessToken` sign                                    |
+| `/logout` | -             | DELETE | Delete `refreshToken` on DB & Cookie Client                      |
 
 # JWT Flow
 
