@@ -68,6 +68,12 @@ const Login = () => {
                                     <button className="button is-success is-fullwidth">
                                         Login
                                     </button>
+                                    <a
+                                        href="/register"
+                                        className="button is-fullwidth mt-4"
+                                    >
+                                        Register
+                                    </a>
                                 </div>
                             </form>
                         </div>
