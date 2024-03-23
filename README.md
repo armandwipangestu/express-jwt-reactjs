@@ -5,6 +5,7 @@ This repository is for exercise implement Express.js RESTful API with JWT Authen
 # Table of Contents
 
 -   [Running on Localhost](#running-on-localhost)
+    -   [Backend](#backend)
 -   [JWT Flow](#jwt-flow)
     -   [JWT on Login (Authentication)](#jwt-on-login-authentication)
     -   [JWT on Middleware (Authorization)](#jwt-on-middleware-authorization)
@@ -19,8 +20,7 @@ This repository is for exercise implement Express.js RESTful API with JWT Authen
 git clone https://github.com/armandwipangestu/express-jwt-reactjs
 ```
 
-<details>
-<summary>Back End</summary>
+## Backend
 
 -   Change current directory to backend
 
@@ -65,13 +65,24 @@ cp .env.example .env
 
 > **NOTE**:
 >
+> If you run this for the first time, you can uncomment this code on `index.js` file at root folder to create the table `users` first. If the table already created, you can give comment again
+>
+> ```js
+> try {
+>     await DB.authenticate();
+>     console.log("Database Connected...!");
+>     // Uncomment this code below to Create Table from UserModel
+>     // await Users.sync();
+> } catch (error) {
+>     console.error(error);
+> }
+> ```
+>
 > Backend server will run on `localhost:5000`
 
 ```bash
 nodemon index
 ```
-
-</details>
 
 # JWT Flow
 
