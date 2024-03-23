@@ -137,6 +137,6 @@ export const Logout = async (req, res) => {
         }
     );
 
-    res.clearCookie("refreshCookie");
+    res.clearCookie("refreshToken");
     return res.sendStatus(200);
 };
