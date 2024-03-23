@@ -9,11 +9,12 @@ const Navbar = () => {
         >
             <div className="container">
                 <div className="navbar-brand">
-                    <a className="navbar-item" href="https://bulma.io">
+                    <a className="navbar-item" href="#">
                         <img
                             src="http://jwt.io/img/logo-asset.svg"
                             width="112"
                             height="28"
+                            alt="Logo"
                         />
                     </a>
 
@@ -23,6 +24,7 @@ const Navbar = () => {
                         aria-label="menu"
                         aria-expanded="false"
                         data-target="navbarBasicExample"
+                        href="/"
                     >
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
@@ -32,13 +34,17 @@ const Navbar = () => {
 
                 <div id="navbarBasicExample" className="navbar-menu">
                     <div className="navbar-start">
-                        <a className="navbar-item">Home</a>
+                        <a className="navbar-item" href="/">
+                            Home
+                        </a>
                     </div>
 
                     <div className="navbar-end">
                         <div className="navbar-item">
                             <div className="buttons">
-                                <a className="button is-light">Log Out</a>
+                                <button className="button is-light">
+                                    Log Out
+                                </button>
                             </div>
                         </div>
                     </div>
