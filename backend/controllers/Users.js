@@ -107,3 +107,36 @@ export const Login = async (req, res) => {
         });
     }
 };
+
+export const Logout = async (req, res) => {
+    const refreshToken = req.cookies.refreshToken;
+
+    if (!refreshToken) {
+        return res.sendStatus(204); // no content
+    }
+
+    const user = await Users.findAll({
+        where: {
+            refresh_token: refreshToken,
+        },
+    });
+
+    if (!user[0]) {
+        return res.sendStatus(204); // no content
+    }
+
+    const userId = user[0].id;
+    await Users.update(
+        {
+            refresh_token: null,
+        },
+        {
+            where: {
+                id: userId,
+            },
+        }
+    );
+
+    res.clearCookie("refreshCookie");
+    return res.sendStatus(200);
+};
