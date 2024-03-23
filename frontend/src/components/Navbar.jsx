@@ -7,7 +7,7 @@ const Navbar = () => {
 
     const Logout = async () => {
         try {
-            await axios.delete("http://localhost:5000/logout");
+            await axios.delete(`${import.meta.env.VITE_API_URL}/logout`);
 
             navigate("/");
         } catch (error) {

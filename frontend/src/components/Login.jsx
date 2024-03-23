@@ -12,7 +12,7 @@ const Login = () => {
     const Auth = async (e) => {
         e.preventDefault(); // make website not reload when submit form
         try {
-            await axios.post(`http://localhost:5000/login`, {
+            await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
                 email,
                 password,
             });
