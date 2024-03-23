@@ -127,13 +127,13 @@ yarn run dev
 
 # API Information
 
-| Endpoint  | Middleware    | Method | Description                                                      |
-| --------- | ------------- | ------ | ---------------------------------------------------------------- |
-| `/users`  | `verifyToken` | GET    | Get `users` data with Authorization by `accessToken`             |
-| `/users`  | -             | POST   | Register `users`                                                 |
-| `/login`  | -             | POST   | Authentication with generate `refreshToken` & `accessToken` sign |
-| `/token`  | -             | GET    | Regenerate `accessToken` sign                                    |
-| `/logout` | -             | DELETE | Delete `refreshToken` on DB & Cookie Client                      |
+| Endpoint  | Middleware    | Method | Description                                                       |
+| --------- | ------------- | ------ | ----------------------------------------------------------------- |
+| `/users`  | `verifyToken` | GET    | Get `users` data with Authorization Bearer token by `accessToken` |
+| `/users`  | -             | POST   | Register `users`                                                  |
+| `/login`  | -             | POST   | Authentication with generate `refreshToken` & `accessToken` sign  |
+| `/token`  | -             | GET    | Regenerate `accessToken` sign                                     |
+| `/logout` | -             | DELETE | Delete `refreshToken` on DB & Cookie Client                       |
 
 # JWT Flow
 
