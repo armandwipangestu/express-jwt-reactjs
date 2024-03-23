@@ -1,6 +1,7 @@
-# Express & JWT & React.js
+<h1 align="center">Express.js + JWT + React.js/h1>
+<p align="center">This repository is for exercise implement Express.js RESTful API with JWT Authentication and Authorization, then consume the RESTful API in the Frontend with React.js</p>
 
-This repository is for exercise implement Express.js RESTful API with JWT Authentication and Authorization, then consume the RESTful API in the Frontend with React.js
+<img src="assets/banner.png">
 
 # Table of Contents
 
